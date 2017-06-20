@@ -11,7 +11,7 @@ public class AlphabetOrNot {
 			System.out.println("The given character is alphabet");
 		}
 		else{
-			System.out.println("The given character is special character");
+			System.out.println("The given character is not alphabet");
 		}
 		sc.close();
 
