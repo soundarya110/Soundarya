@@ -1,0 +1,57 @@
+package epracto;
+
+import java.util.Scanner;
+
+public class Encrypt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		char[] capsalpha={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+		char[] smallalpha={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+		String input=sc.nextLine();
+		String[] inputs=input.split("#");
+		char[] arr=inputs[1].toCharArray();
+		int len=Integer.valueOf(inputs[0]);
+		int add=Integer.valueOf(inputs[2]);
+		for(int i=0;i<len;i++){
+			char ch=arr[i];
+			char b=' ';
+			int j=0;
+			int ascii=(int)ch;
+			if(ascii>=97&&ascii<=122){
+				for(j=0;j<26;j++){
+					if(ch==smallalpha[j]){
+						if(j+add<26){
+							b=smallalpha[j+add];
+						}
+						else{
+							int s=Math.abs(26-(j+add));
+							b=smallalpha[s];
+						}
+					}
+				}
+				arr[i]=b;
+			}
+			if(ascii>=65&&ascii<=90){
+				for(j=0;j<26;j++){
+					if(ch==capsalpha[j]){
+						if(j+add<26){
+							b=capsalpha[j+add];
+						}
+						else{
+							int s=Math.abs(26-(j+add));
+							b=capsalpha[s];
+						}
+					}
+				}
+				arr[i]=b;
+			}
+		}
+		for(int i=0;i<len;i++){
+			System.out.print(arr[i]);
+		}
+		sc.close();
+	}
+
+}
