@@ -1,0 +1,64 @@
+package lpMilestone3;
+import java.lang.reflect.Array;
+import java.util.*;
+public class LexicographicalOrder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String[] arr=new String[5];
+		/*int[] a=new int[5];
+		int[] b=new int[5];
+		int[] c=new int[5];*/
+		for(int i=0;i<5;i++){
+			arr[i]=sc.nextLine();
+		}
+		/*for(int i=0;i<5;i++){
+			a[i]=(int)arr[i].charAt(0);
+			if(arr[i].length()>=2){
+				b[i]=(int)arr[i].charAt(1);
+			}
+			if(arr[i].length()>=3){
+				c[i]=(int)arr[i].charAt(2);
+			}
+		}
+		for(int k=0;k<5;k++){
+			for(int i=0;i<5;i++){
+				for(int j=i+1;j<5;j++){
+					if(a[i]>a[j]){
+						int temp1=a[i];
+						a[i]=a[j];
+						a[j]=temp1;
+						String temp=arr[i];
+						arr[i]=arr[j];
+						arr[j]=temp;
+						}
+					if(b[i]>b[j]){
+						int temp2=b[i];
+						b[i]=b[j];
+						b[j]=temp2;
+						String temp=arr[i];
+						arr[i]=arr[j];
+						arr[j]=temp;
+						}
+					if(c[i]>c[j]){
+						int temp3=c[i];
+						c[i]=c[j];
+						c[j]=temp3;
+						String temp=arr[i];
+						arr[i]=arr[j];
+						arr[j]=temp;
+						}
+					}
+				}
+			}*/
+		Arrays.sort(arr);//for ascending order
+		//for desending order Arrays.sort(arr,Collections.reverseOrder());
+		for(String str:arr){
+			System.out.println(str);
+		}
+		sc.close();
+
+	}
+
+}
