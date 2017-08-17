@@ -1,0 +1,39 @@
+package skillRack;
+import java.util.*;
+public class Sumadjacentelementin2D {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int i=sc.nextInt();//i is row
+		int j=sc.nextInt();//j is column
+		int[][] a=new int[i][j];
+		for(int k=0;k<i;k++){
+			for(int l=0;l<j;l++){
+				a[k][l]=sc.nextInt();
+			}
+		}
+		int[][] b=new int[i][j];
+		for(int k=0;k<i;k++){
+			for(int l=0;l<j;l++){
+					if(l==0){
+						b[k][l]=a[k][l+1];
+					}
+					else if(l==j-1){
+						b[k][l]=a[k][l-1];
+					}
+					else{
+						b[k][l]=a[k][l-1]+a[k][l+1];
+					}
+			}
+		}
+		for(int k=0;k<i;k++){
+			System.out.print("\n");
+			for(int l=0;l<j;l++){
+				System.out.print(b[k][l]+"\t");
+			}
+		}
+	
+	}
+
+}
