@@ -1,0 +1,31 @@
+package practiseProblems;
+
+public class CountTheSubString {
+	static String input1;
+	static char input2;
+	static int output1;
+	static int output2;
+	public static void countthesubstring(String input1,char input2){
+		int l=input1.length();
+		int substringcount=0;
+		int count=0;
+		for(int i=0;i<l;i++){
+			for(int j=i+2;j<=l;j++){
+				System.out.println(input1.substring(i,j));
+				if(input1.substring(i,j).charAt(0)==input2){
+					substringcount++;
+				}
+				count++;
+			}
+		}
+		System.out.println(count);
+		System.out.println(substringcount);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		countthesubstring("Mania",'M');
+
+	}
+
+}
