@@ -1,0 +1,27 @@
+package lpMilestone3;
+import java.util.*;
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int N=sc.nextInt();
+		int fib1=0;
+		int fib2=1;
+		int fib3;
+		int count=2;
+		System.out.println(fib1);
+		System.out.println(fib2);
+		while(count<N){
+			//System.out.println("*"+fib1+"*"+fib2);
+			fib3=fib1+fib2;
+			count++;
+			fib1=fib2;
+			fib2=fib3;
+			System.out.println(fib3);
+		}
+		sc.close();
+
+	}
+
+}
