@@ -1,0 +1,256 @@
+package lp;
+import java.util.*;
+public class LpNew {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String input1=sc.nextLine();
+		int input2=sc.nextInt();
+		String[] seperate=input1.split(" ");
+		int len=seperate.length;
+		String[] oddarr=new String[15];
+		String[] evenarr=new String[15];
+		for(int i=0;i<len;i++){
+			String sep=seperate[i];
+			char[] arr=sep.toCharArray();
+			evenarr[i]="";
+			oddarr[i]="";
+			for(int j=0;j<arr.length;j++){
+				if((j+1)%2==0){
+					evenarr[i]+=Character.toString(arr[j]);
+				}
+				else{
+					oddarr[i]+=Character.toString(arr[j]);
+				}
+			}
+		}
+			if(input2==1){
+				for(int j=0;j<len;j++){
+					System.out.print(oddarr[j]+evenarr[j]+" ");
+				}
+			}
+			else{
+				for(int j=0;j<len;j++){
+					String s=new StringBuilder(evenarr[j]).reverse().toString();
+					System.out.print(oddarr[j]+s+" ");
+				}
+			}
+        
+	}
+
+}
+[package lp;
+import java.io.*;
+import java.util.*;
+public class UserMainCode {
+
+	public String JumbleWords(String input1,int input2){
+		// Read only region end
+		// Write code here...
+			String[] seperate=input1.split(" ");
+			int len=seperate.length;
+			char[] arr=new char[10];
+			char[] oddarr=new char[5];
+			char[] evenarr=new char[5];
+		    char[] oddarr1=new char[5];
+		    char[] evenarr1=new char[5];
+			String[] jumbled=new String[len];
+			String[] newjum=new String[len];
+		if(input2==1){
+			for(int i=0;i<len;i++){
+				//System.out.println(seperate[i]);
+				int l=0;
+				int m=0;
+				String sep=seperate[i];
+				arr=sep.toCharArray();
+				int charlen=arr.length;
+				jumbled[i]="";
+				newjum[i]="";
+				/*for(int n=0;n<charlen;n++){
+					System.out.println(arr[n]);
+				}*/
+				for(int j=0;j<charlen;j++){
+					if((j+1)%2!=0){
+						oddarr[l]=arr[j];
+						l++;
+						/*if(l<4){
+							l++;
+					}*/
+				}
+			}
+				/*for(int j=0;j<oddarr.length;j++){
+					System.out.print(oddarr[j]);
+				}*/
+				for(int j=charlen-1;j>=0;j--){
+					if((j+1)%2==0){
+						evenarr[m]=arr[j];
+						m++;
+						/*if(m<4){
+							m++;
+					}*/
+				}
+			}
+				for(int j=0;j<evenarr.length;j++){
+					System.out.println(evenarr[j]);
+				}
+				for(int j=0;j<5;j++){
+					evenarr1[j]=evenarr[5-1-j];
+				}
+				/*System.out.print(evenarr.length+" "+oddarr.length);
+				for(int j=0;j<evenarr.length;j++){
+					System.out.print(evenarr[j]);
+				}*/
+				{
+				for(int k=0;k<oddarr.length;k++){
+					//jumbled[0]=" ";
+					if(oddarr[k]!=' '){
+						jumbled[i]=jumbled[i]+oddarr[k];
+						//newjum[i]=jumbled[i];
+					}
+				}
+				for(int k=0;k<evenarr.length;k++){
+					if(evenarr[k]!=' '){
+						jumbled[i]=jumbled[i]+evenarr1[k];
+					}
+				}
+			}
+			}
+			for(int i=0;i<len;i++){
+				System.out.print(jumbled[i]+" ");
+			}
+		}
+		if(input2==2){
+			for(int i=0;i<len;i++){
+				jumbled[i]="";
+				int l=0;
+				int m=0;
+				String sep=seperate[i];
+				arr=sep.toCharArray();
+				int charlen=arr.length;
+				for(int j=0;j<charlen;j++){
+					if((j+1)%2!=0){
+						oddarr[l]=arr[j];
+						l++;
+						/*if(l<4){
+						l++;
+					}*/
+				}
+			}
+				for(int j=0;j<5;j++){
+					oddarr1[j]=oddarr[j];
+				}
+				for(int j=0;j<charlen;j++){
+					if((j+1)%2==0){
+						evenarr[m]=arr[j];
+						m++;
+						/*if(m<4){
+							m++;
+					}*/
+				}
+			}
+				for(int j=0;j<evenarr.length;j++){
+					System.out.println(evenarr[j]);
+				}
+				for(int j=0;j<5;j++){
+					evenarr1[j]=evenarr[5-1-j];
+				}
+				for(int k=0;k<oddarr1.length;k++){
+					if(oddarr1[k]!=' '){
+						jumbled[i]=jumbled[i]+oddarr1[k];
+					}
+				}
+				for(int k=0;k<evenarr1.length;k++){
+					if(evenarr1[k]!=' '){
+						jumbled[i]=jumbled[i]+evenarr1[k];
+					}
+				}
+			}
+			for(int i=0;i<len;i++){
+				System.out.print(jumbled[i]+" ");
+			}
+		}
+		return " ";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserMainCode u=new UserMainCode();
+		u.JumbleWords("PROJECT BASED LEARNING",2);
+
+	}
+
+}]
+[package lp;
+import java.io.*;
+import java.util.*;
+public class User {
+	public String JumbleWords(String input1,int input2){
+		String[] seperate=input1.split(" ");
+		int len=seperate.length;
+		int oddlen;
+		int evenlen;
+		char[] arr=new char[10];
+		String[] evenarr=new String[5];
+		String[] oddarr=new String[5];
+		String[] evenarr1=new String[5];
+		String[] oddarr1=new String[5];
+		String[] jumbled=new String[len];
+		String[] newjumbled=new String[len];
+		if(input2==1){
+			for(int i=0;i<len;i++){
+				int l=0;
+				int m=0;
+				String sep=seperate[i];
+				arr=sep.toCharArray();
+				int charlen=arr.length;
+				jumbled[i]="";
+				//System.out.println(charlen);
+				for(int j=0;j<charlen;j++){
+					if((j+1)%2!=0){
+						oddarr[l]=Character.toString(arr[j]);
+						l++;
+					}
+					if((j+1)%2==0){
+						evenarr[m]=Character.toString(arr[j]);
+						m++;
+					}
+				}
+				for(int j=0;j<5;j++){
+					evenarr1[j]=evenarr[5-j-1];
+				}
+				if(charlen%2==0){
+					oddlen=charlen/2;
+					evenlen=charlen/2;
+				}
+				else{
+					oddlen=(charlen/2)+1;
+					evenlen=charlen/2;
+				}
+				for(int j=0;j<oddlen;j++){
+					if(oddarr[j]!=null){
+					jumbled[i]=jumbled[i]+oddarr[j];
+					}
+				}
+				newjumbled[i]=jumbled[i];
+				for(int j=0;j<5;j++){
+					if(evenarr1[j]!=null){
+						newjumbled[i]=newjumbled[i]+evenarr1[j];
+					}
+				}
+			}
+				for(int j=0;j<len;j++){
+					System.out.print(newjumbled[j]+" ");
+				}
+			}
+		return " ";	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		User u=new User();
+		u.JumbleWords("PROJECT BASED LEARNING",1);
+
+	}
+
+}]
