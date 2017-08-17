@@ -1,0 +1,56 @@
+package practisecom;
+import java.util.*;
+public class PrintAlphaForNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String input="a1b10";
+		/*for(int i=0;i<input.length();i++){
+			if(Character.isAlphabetic(input.charAt(i))){
+				for(int j=1;j<=(int)(input.charAt(i+1));j++){
+					System.out.print(input.charAt(i));
+				}
+			}
+		}
+		String sss=" ";
+		for(int i=0;i<input.length();i++){
+			if(Character.isAlphabetic(input.charAt(i))){
+				if(Character.isDigit(input.charAt(i+1))&&Character.isAlphabetic(input.charAt(i+2))){
+					System.out.print((int)(input.charAt(i+1)));
+					sss=" "+(input.charAt(i+1));
+					for(int j=1;j<Integer.parseInt(sss);j++){
+						System.out.print(input.charAt(i));
+					}
+				}
+					System.out.print(sss);
+				if(Character.isDigit(input.charAt(i+1))&&Character.isDigit(input.charAt(i+2))){
+					String str=input.substring(i+1,i+3);
+					int ss=Integer.parseInt(str);
+					System.out.print(ss);
+				}
+			}
+		}*/
+		
+		int len=input.length();
+		for(int i=0;i<len;i++){
+			if(Character.isAlphabetic(input.charAt(i))&&Character.isDigit(input.charAt(i+1))&&Character.isAlphabetic(input.charAt(i+2))){
+				char s=input.charAt(i+1);
+				int a=Character.getNumericValue(s);
+				//System.out.println(a);
+				for(int j=1;j<=a;j++){
+					System.out.print(input.charAt(i));
+				}
+			}
+			if(Character.isAlphabetic(input.charAt(i))&&Character.isDigit(input.charAt(i+1))&&Character.isDigit(input.charAt(i+2))){
+				int a=Integer.valueOf(input.substring(i+1,i+3));
+				//System.out.println(a);
+				for(int j=1;j<=a;j++){
+					System.out.print(input.charAt(i));
+				}
+			}
+		}
+	
+	}
+
+}
