@@ -1,0 +1,24 @@
+package lpMilestone3;
+import java.util.*;
+public class SumOfEvenNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int N=sc.nextInt();
+		int even;
+		int sum=0;
+		if(N>0){
+			for(int i=1;i<N;i++){
+				even=i*2;
+				if(even<N){
+					sum=sum+even;
+				}
+			}
+		}
+		System.out.println(sum);
+		sc.close();
+
+	}
+
+}
