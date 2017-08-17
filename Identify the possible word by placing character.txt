@@ -1,0 +1,77 @@
+package practiseProblems;
+
+public class IdentifyPossibleWord {
+	static String input1;
+	static String input2;
+	static String output1;
+	public static void identifypossiblewords(String input1,String input2){
+		int len1=input1.length();
+		String[] arr=new String[10];
+		String[] arr1=new String[10];
+		String[] arr2=new String[5];
+		int len2=input2.length();
+		int temp=0;
+		int j=0;
+		int k=0;
+		int l=0;
+		int m=0;
+		for(int i=0;i<len2;i++){
+			if(input2.charAt(i)==':'){
+				if(j==0){
+				arr[j]=input2.substring(0,i);
+				j++;
+				temp=i+1;
+				}
+				else{
+					arr[j]=input2.substring(temp,i);
+					j++;
+					temp=i+1;
+				}
+			}
+			if(i==len2-1){
+				arr[j]=input2.substring(temp);
+			}
+		}
+		for(int i=0;i<5;i++){
+			System.out.print(arr[i]);
+		}
+		System.out.println("");
+		for(int i=0;i<5;i++){
+		if(len1==arr[i].length()){
+			arr1[k]=arr[i].toLowerCase();
+			k++;
+			}
+		}
+		for(int i=0;i<5;i++){
+			System.out.print(arr1[i]);
+		}
+		System.out.println("");
+		input1=input1.toLowerCase();
+		for(int n=0;n<5;n++){
+			if(input1.charAt(0)==arr1[n].charAt(0)){
+				if(input1.charAt(1)==arr1[n].charAt(1)){
+					int i=4;
+			if(input1.charAt(i)==arr1[n].charAt(i)){
+				if(i==len1-1){
+					arr2[m]=arr1[l];
+					m++;
+					l++;
+						}
+				i++;
+					}
+				}
+			}
+		}
+			
+		for(int i=0;i<3;i++){
+			System.out.print(arr2[i]);
+		}
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 identifypossiblewords("Fi_er","Filer:fixer:Fiber:fever:fibre");
+
+	}
+
+}
