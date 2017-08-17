@@ -1,0 +1,38 @@
+package skillRack;
+import java.util.*;
+public class ReverseTheString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.nextLine();
+		int len=s.length();
+		String[] arr=new String[10];
+		int temp=0;
+		int j=0;
+		for(int i=0;i<len;i++){
+			if(s.charAt(i)==' '){
+				if(j==0){
+					arr[j]=s.substring(0,i);
+					temp=temp+i;
+					j++;
+				}
+				else{
+					//System.out.println(temp);
+					arr[j]=s.substring(temp,i);
+					temp=i+1;;
+					j++;
+				}
+			}
+			if(i==len-1){
+				//System.out.println(temp);
+				arr[j]=s.substring(temp);
+			}
+		}
+		for(int i=j;i>=0;i--){
+			System.out.print(arr[i]+"\t");
+		}
+
+	}
+
+}
