@@ -1,0 +1,54 @@
+package practiseProblems;
+
+public class MostFrequent {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int input1=123;
+		int input2=345;
+		int input3=567;
+		int input4=7890;
+		String input5="+-*/";
+		int[] input={input1,input2,input3,input4};
+		int[] num={0,1,2,3,4,5,6,7,8,9};
+		int[] count=new int[10];
+		int k=10;
+		for(int i=0;i<4;i++){
+			int a=input[i];
+			while(a!=0){
+				int n=a%10;
+				count[n]++;
+			}
+			a=a/10;
+		}
+		for(int i=0;i<10;i++){
+			for(int j=i+1;j<10;j++){
+				if(count[i]<count[j]){
+					int temp=count[i];
+					count[i]=count[j];
+					count[j]=temp;
+					int temp1=num[i];
+					num[i]=num[j];
+					num[j]=temp1;
+				}
+			}
+		}
+		for(int i=0;i<4;i++){
+			System.out.println(input5.charAt(i));
+		}
+		int firstfrequent=num[0];
+		int secondfrequent=num[1];
+		int thirdfrequent=num[2];
+		int lastfrequent=num[3];
+		System.out.println(firstfrequent+input5.charAt(0)+secondfrequent);
+		int output1=firstfrequent+input5.charAt(0)+secondfrequent;
+		int output2=secondfrequent+input5.charAt(1)+thirdfrequent;
+		int output3=thirdfrequent+input5.charAt(2)+lastfrequent;
+		int output4=lastfrequent+input5.charAt(3)+firstfrequent;
+		System.out.println(output1);
+		System.out.println(output2);
+		System.out.println(output3);
+		System.out.println(output4);
+	}
+
+}
