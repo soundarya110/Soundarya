@@ -1,0 +1,62 @@
+package skillRack;
+import java.util.*;
+public class TwoDArrayDisplay {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+				Scanner sc=new Scanner(System.in);
+				int N=sc.nextInt();
+				int[][] arr=new int[N][N];
+				int initial=1;
+				int k=0;
+				int l=0;
+				for(int i=0;i<N/2;i++){
+				    k=i;
+				    l=N-i-1;
+				    for(int j=0;j<N;j++){
+				        arr[k][j]=initial;
+				        initial++;
+				    }
+				    for(int j=0;j<N;j++){
+				        arr[l][j]=initial;
+				        initial++;
+				    }
+				    if((i==(N/2)-1)&&(N%2!=0)){
+				        int m=N/2;
+				        for(int j=0;j<N;j++){
+				            arr[m][j]=initial;
+				            initial++;
+				        }
+				    }
+				}
+				for(int i=0;i<N;i++){
+				    System.out.println(" ");
+				    for(int j=0;j<N;j++){
+				        System.out.print(arr[i][j]+" ");
+				    }
+				}
+				sc.close();
+
+	}
+
+}
+
+
+Input:
+N=4
+Output:
+1 2 3 4
+9 10 11 12
+13 14 15 16
+5 6 7 8
+
+Input:
+N=7
+Output:
+1 2 3 4 5 6 7
+15 16 17 18 19 20 21
+29 30 31 32 33 34 35
+43 44 45 46 47 48 49
+36 37 28 29 40 41 42
+22 23 24 25 26 27 28 
+8 9 10 11 12 13 14
