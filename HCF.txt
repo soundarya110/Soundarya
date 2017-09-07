@@ -1,0 +1,25 @@
+package practiseproblem;
+import java.util.*;
+public class HCF {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		long X=sc.nextLong();
+		long Y=sc.nextLong();
+		while(X!=Y){
+			if(X>Y) {
+				X=X-Y;
+				System.out.println("#"+X);
+			}
+			else {
+				Y=Y-X;
+				System.out.println("*"+Y);
+			}
+		}
+		System.out.println(X);
+		sc.close();
+
+	}
+
+}
