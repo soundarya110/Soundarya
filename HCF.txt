@@ -7,6 +7,8 @@ public class HCF {
 		Scanner sc=new Scanner(System.in);
 		long X=sc.nextLong();
 		long Y=sc.nextLong();
+		X=(X>0)?X:-X;
+		Y=(Y>0)?Y:-Y;
 		while(X!=Y){
 			if(X>Y) {
 				X=X-Y;
