@@ -1,0 +1,87 @@
+package skillRack;
+import java.util.*;
+public class ZigZagStringDisplay {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String S=sc.nextLine();
+		int N=sc.nextInt();
+		int len=S.length();
+		int row=0;
+		if(len%N==0){
+			row=len/N;
+		}
+		else{
+			row=(len/N)+1;
+		}
+		int k=0;
+		char[][] arr=new char[row][N];
+		if((len>=4&&len<=500)&&(N>=2&&N<=len)){
+			for(int i=0;i<row;i++){
+				while(i<row){
+					for(int j=0;j<N;j++){
+						if(k>=len){
+							arr[i][j]='*';
+						}
+						else{
+						arr[i][j]=S.charAt(k);
+						k++;
+						}
+					}
+					i++;
+					if(i<row){
+					for(int j=N-1;j>=0;j--){
+						if(k>=len){
+							arr[i][j]='*';
+						}
+						else{
+						arr[i][j]=S.charAt(k);
+						k++;
+						}
+					}
+				}
+					i++;
+				}
+			}
+		}
+		for(int i=0;i<row;i++){
+			System.out.println();
+			for(int j=0;j<N;j++){
+				System.out.print(arr[i][j]);
+			}
+		}
+		
+		sc.close();
+
+	}
+
+}
+ Input:
+Environment
+3
+
+Output:
+Env
+ori
+nme
+*tn
+
+Input:
+Environment
+4
+
+Output:
+Envi
+mnor
+ent*
+
+Input:
+Environmentals
+En
+iv
+ro
+mn
+en
+at
+ls
